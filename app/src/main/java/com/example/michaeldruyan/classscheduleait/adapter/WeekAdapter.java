@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.michaeldruyan.classscheduleait.DayActivity;
 import com.example.michaeldruyan.classscheduleait.R;
 import com.example.michaeldruyan.classscheduleait.WeekActivity;
 
@@ -71,35 +72,35 @@ public class WeekAdapter extends RecyclerView.Adapter<WeekAdapter.ViewHolder> {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                if (weeks[position].equalsIgnoreCase("Monday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Monday");
-//                    (context).startActivity(dayLaunch);
-//                } else if (weeks[position].equalsIgnoreCase("Tuesday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Tuesday");
-//                    (context).startActivity(dayLaunch);
-//                } else if (weeks[position].equalsIgnoreCase("Wednesday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Wednesday");
-//                    (context).startActivity(dayLaunch);
-//                } else if (weeks[position].equalsIgnoreCase("Thursday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Thursday");
-//                    (context).startActivity(dayLaunch);
-//                } else if (weeks[position].equalsIgnoreCase("Friday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Friday");
-//                    (context).startActivity(dayLaunch);
-//                } else if (weeks[position].equalsIgnoreCase("Saturday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Saturday");
-//                    (context).startActivity(dayLaunch);
-//                } else if (weeks[position].equalsIgnoreCase("Sunday")) {
-//                    Intent dayLaunch = new Intent(context, DayActivity.class);
-//                    dayLaunch.putExtra("DAY", "Sunday");
-//                    (context).startActivity(dayLaunch);
-//                }
+                if (weeks[position].equalsIgnoreCase("Monday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Monday");
+                    (context).startActivity(dayLaunch);
+                } else if (weeks[position].equalsIgnoreCase("Tuesday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Tuesday");
+                    (context).startActivity(dayLaunch);
+                } else if (weeks[position].equalsIgnoreCase("Wednesday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Wednesday");
+                    (context).startActivity(dayLaunch);
+                } else if (weeks[position].equalsIgnoreCase("Thursday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Thursday");
+                    (context).startActivity(dayLaunch);
+                } else if (weeks[position].equalsIgnoreCase("Friday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Friday");
+                    (context).startActivity(dayLaunch);
+                } else if (weeks[position].equalsIgnoreCase("Saturday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Saturday");
+                    (context).startActivity(dayLaunch);
+                } else if (weeks[position].equalsIgnoreCase("Sunday")) {
+                    Intent dayLaunch = new Intent(context, DayActivity.class);
+                    dayLaunch.putExtra("DAY", "Sunday");
+                    (context).startActivity(dayLaunch);
+                }
             }
 
         });
