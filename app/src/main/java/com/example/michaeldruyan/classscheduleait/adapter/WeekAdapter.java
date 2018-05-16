@@ -51,19 +51,19 @@ public class WeekAdapter extends RecyclerView.Adapter<WeekAdapter.ViewHolder> {
         viewHolder.tvWeekName.setText(weeks[position]);
 
         if (weeks[position].equalsIgnoreCase("Monday")) {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.timetable);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.monday);
         } else if (weeks[position].equalsIgnoreCase("Tuesday")) {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.book);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.tuesday);
         } else if (weeks[position].equalsIgnoreCase("Wednesday")) {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.contact);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.wednesday);
         } else if (weeks[position].equalsIgnoreCase("Thursday")) {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.contact);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.thursday);
         } else if (weeks[position].equalsIgnoreCase("Friday")) {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.contact);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.friday);
         } else if (weeks[position].equalsIgnoreCase("Saturday")) {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.contact);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.saturday);
         } else {
-            viewHolder.ivWeekLogo.setImageResource(R.drawable.contact);
+            viewHolder.ivWeekLogo.setImageResource(R.drawable.sunday);
         }
     }
 }

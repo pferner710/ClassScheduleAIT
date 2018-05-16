@@ -1,6 +1,7 @@
 package com.example.michaeldruyan.classscheduleait.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.michaeldruyan.classscheduleait.R;
+import com.example.michaeldruyan.classscheduleait.WeekActivity;
 
 public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHolder> {
 
@@ -37,12 +39,6 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
         context = mContext;
     }
 
-    /*
-    @Override
-    public Object getItem(int position) {
-        return titles[position];
-    }
-    */
 
     @Override
     public long getItemId(int position) {
@@ -71,6 +67,18 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
         }else{
             viewHolder.imageView.setImageResource(R.drawable.settings);
         }
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (titles[position].equalsIgnoreCase("Timetable")) {
+                    Intent timeTableLaunch = new Intent(context, WeekActivity.class);
+                    (context).startActivity(timeTableLaunch);
+                }
+            }
+
+        });
+
     }
 
     @Override
