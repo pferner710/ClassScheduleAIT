@@ -12,6 +12,7 @@ import java.sql.Time;
 
 @Entity
 public class Event implements Serializable{
+
     @PrimaryKey
     public long id;
     public String name;
@@ -76,5 +77,13 @@ public class Event implements Serializable{
 
     public void setDay(String day) {
         this.day = day;
+    }
+
+    public long getEventId() {
+        return id;
+    }
+
+    public void setEventId(long id) {
+        this.id = id;
     }
 }

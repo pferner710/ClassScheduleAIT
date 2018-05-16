@@ -5,11 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
+import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
+import com.example.michaeldruyan.classscheduleait.data.Event;
 
 public class MainActivity extends AppCompatActivity {
 
+    private EventAdapter
     private Toolbar toolbar;
     public static final String KEY_EDIT = "KEY_EDIT";
 
@@ -43,4 +48,52 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(simpleAdapter);
 
     }
+
+    private void showCreateEventDialog(){
+        new CreateAndEditEventDialog().show(getSupportFragmentManager(), "CreateAndEditEventDialog");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.actionAdd:
+                showCreateEventDialog();
+                return true;
+            default:
+                return true;
+        }
+    }
+
+    @Override
+    public void onNewEventCreated(final Event event){
+        new Thread() {
+            @Override
+            public void run() {
+                long id = AppDatabase.getAppDatabase(MainActivity.this).
+                        eventDao().insertEvent(event);
+                event.setEventId(id);
+
+                //LEFT OFF HERE
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        itemsAdapter.addItem(item);
+                        showSnackBarMessage(getString(R.string.txt_item_added));
+                    }
+                });
+            }
+        }.start();
+    }
+
+    @Override
+    public void onEventUpdated(Event event){
+
+    }
+
 }

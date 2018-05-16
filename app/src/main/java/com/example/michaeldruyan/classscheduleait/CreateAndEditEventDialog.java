@@ -18,7 +18,7 @@ import com.example.michaeldruyan.classscheduleait.data.Event;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CreateAndEditEventDialog extends android.app.DialogFragment {
+public class CreateAndEditEventDialog extends DialogFragment {
 
     public interface EventHandler {
         public void onNewEventCreated(Event event);
