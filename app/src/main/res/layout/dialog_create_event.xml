@@ -9,91 +9,151 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:text="Monday"
-        android:id = "@+id/tvMonday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/etStartHour"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/startMin"
+        android:layout_toStartOf="@+id/startMin"
+        android:hint="Start hour"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etStartMinute"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/endHour"
+        android:layout_toEndOf="@+id/endHour"
+        android:hint="Start minute"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etEndHour"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/endMin"
+        android:layout_toStartOf="@+id/endMin"
+        android:hint="End hour"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etEndMinute"
+        android:layout_width="107dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/cbTuesday"
+        android:layout_marginEnd="2dp"
+        android:hint="End minute"
+        android:inputType="number"/>
 
     <CheckBox
-        android:id = "@+id/cbMonday"
+        android:id="@+id/cbMonday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvMonday"/>
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/etEventName" />
 
     <TextView
-        android:text="Tuesday"
-        android:id = "@+id/tvTuesday"
+        android:id="@+id/tvMonday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvMonday"/>
+
+        android:layout_below="@+id/etEventName"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Monday" />
 
     <CheckBox
         android:id = "@+id/cbTuesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvTuesday"/>
+        android:layout_below="@+id/cbMonday"/>
 
     <TextView
-        android:text="Wednesday"
-        android:id = "@+id/tvWednesday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id = "@+id/cbWednesday"
+        android:id="@+id/tvTuesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvWednesday"/>
+        android:layout_below="@+id/cbMonday"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Tuesday" />
+
+
+    <CheckBox
+        android:id="@+id/cbWednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbTuesday" />
 
     <TextView
-        android:text="Thursday"
-        android:id = "@+id/tvThursday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id = "@+id/cbThursday"
+        android:id="@+id/tvWednesday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvThursday"/>
+        android:layout_below="@+id/cbTuesday"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Wednesday" />
+
+    <CheckBox
+        android:id="@+id/cbThursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbWednesday" />
 
     <TextView
-        android:text="Friday"
-        android:id = "@+id/tvFriday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id = "@+id/cbFriday"
+        android:id="@+id/tvThursday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvFriday"/>
+        android:layout_below="@+id/cbWednesday"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Thursday" />
+
+
+    <CheckBox
+        android:id="@+id/cbFriday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbThursday" />
 
     <TextView
-        android:text="Saturday"
-        android:id = "@+id/tvSaturday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id = "@+id/cbSaturday"
+        android:id="@+id/tvFriday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvSaturday"/>
+        android:layout_below="@+id/cbThursday"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Friday" />
+
+    <CheckBox
+        android:id="@+id/cbSaturday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbFriday" />
+
 
     <TextView
-        android:text="Sunday"
-        android:id = "@+id/tvSunday"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <CheckBox
-        android:id = "@+id/cbSunday"
+        android:id="@+id/tvSaturday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tvSunday"/>
+        android:layout_below="@+id/cbFriday"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Saturday" />
 
+
+    <CheckBox
+        android:id="@+id/cbSunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/cbSaturday" />
+
+    <TextView
+        android:id="@+id/tvSunday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbSaturday"
+        android:layout_toEndOf="@+id/cbMonday"
+        android:text="Sunday" />
 
 
 </RelativeLayout>
