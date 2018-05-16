@@ -11,6 +11,7 @@ import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    public static final String KEY_EDIT = "KEY_EDIT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
