@@ -78,14 +78,6 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                         eventDao().insertEvent(event);
                 event.setEventId(id);
 
-                //LEFT OFF HERE
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        itemsAdapter.addItem(item);
-//                        showSnackBarMessage(getString(R.string.txt_item_added));
-//                    }
-//                });
             }
         }.start();
     }
