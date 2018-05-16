@@ -56,13 +56,16 @@ public class DayActivity extends AppCompatActivity {
         new Thread(){
             @Override
             public void run() {
-                final List<Event> places =
+                final List<Event> events =
                         AppDatabase.getAppDatabase(DayActivity.this).eventDao().getAll();
+
+                System.out.println("SIZE");
+                System.out.println(events.size());
 
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        eventAdapter = new EventAdapter(places, DayActivity.this);
+                        eventAdapter = new EventAdapter(events, DayActivity.this);
                         recyclerView.setAdapter(eventAdapter);
 
 //                        PlacesListTouchHelperCallback touchHelperCallback = new PlacesListTouchHelperCallback(

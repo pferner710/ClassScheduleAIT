@@ -13,8 +13,9 @@ import java.sql.Time;
 @Entity
 public class Event implements Serializable{
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     public long id;
+
     public String name;
     public int startHour;
     public int startMinute;

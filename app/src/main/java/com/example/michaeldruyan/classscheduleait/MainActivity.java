@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.michaeldruyan.classscheduleait.adapter.EventAdapter;
 import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
 import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
 import com.example.michaeldruyan.classscheduleait.data.Event;
@@ -15,6 +16,7 @@ import com.example.michaeldruyan.classscheduleait.data.Event;
 public class MainActivity extends AppCompatActivity implements CreateAndEditEventDialog.EventHandler{
 
     private Toolbar toolbar;
+    private EventAdapter eventAdapter;
     public static final String KEY_EDIT = "KEY_EDIT";
 
     @Override
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                 long id = AppDatabase.getAppDatabase(MainActivity.this).
                         eventDao().insertEvent(event);
                 event.setEventId(id);
-
+                eventAdapter.addEvent(event);
             }
         }.start();
     }
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
             @Override
             public void run() {
                 AppDatabase.getAppDatabase(MainActivity.this).eventDao().update(event);
+                eventAdapter.updateEvent(event);
             }
         }.start();
     }

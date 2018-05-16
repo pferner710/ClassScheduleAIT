@@ -96,6 +96,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
         eventList.add(event);
         Collections.sort(eventList, new TimeComparator());
         notifyDataSetChanged();
+        System.out.println("SIZE EVENT ADAPTER");
+        System.out.println(eventList.size());
     }
 
     public void updateEvent(Event event) {
