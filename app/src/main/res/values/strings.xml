@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ClassScheduleAIT</string>
+    
+    <string-array name="Main">
+        <item>Timetable</item>
+        <item>Subjects</item>
+        <item>Faculty</item>
+        <item>Resources</item>
+    </string-array>
+
+    <string-array name="Description">
+        <item> Description One</item>
+        <item> Description Two</item>
+        <item> Description Three</item>
+        <item> Description Four</item>
+    </string-array>
+</resources>
