@@ -12,9 +12,8 @@ import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
 import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
 import com.example.michaeldruyan.classscheduleait.data.Event;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CreateAndEditEventDialog.EventHandler{
 
-    private EventAdapter
     private Toolbar toolbar;
     public static final String KEY_EDIT = "KEY_EDIT";
 
@@ -80,20 +79,25 @@ public class MainActivity extends AppCompatActivity {
                 event.setEventId(id);
 
                 //LEFT OFF HERE
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        itemsAdapter.addItem(item);
-                        showSnackBarMessage(getString(R.string.txt_item_added));
-                    }
-                });
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        itemsAdapter.addItem(item);
+//                        showSnackBarMessage(getString(R.string.txt_item_added));
+//                    }
+//                });
             }
         }.start();
     }
 
     @Override
-    public void onEventUpdated(Event event){
-
+    public void onEventUpdated(final Event event) {
+        new Thread() {
+            @Override
+            public void run() {
+                AppDatabase.getAppDatabase(MainActivity.this).eventDao().update(event);
+            }
+        }.start();
     }
 
 }

@@ -11,40 +11,45 @@
 
     <EditText
         android:id="@+id/etStartHour"
-        android:layout_width="90dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/startMin"
-        android:layout_toStartOf="@+id/startMin"
+        android:layout_alignTop="@+id/etStartMinute"
+        android:layout_toStartOf="@+id/etStartMinute"
         android:hint="Start hour"
-        android:inputType="number"/>
+        android:textSize="10sp"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/etStartMinute"
-        android:layout_width="107dp"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/endHour"
-        android:layout_toEndOf="@+id/endHour"
+        android:layout_above="@+id/etEndHour"
+        android:layout_toEndOf="@+id/etEndHour"
+
         android:hint="Start minute"
-        android:inputType="number"/>
+        android:textSize="10sp"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/etEndHour"
-        android:layout_width="90dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/endMin"
-        android:layout_toStartOf="@+id/endMin"
+        android:layout_alignTop="@+id/etEndMinute"
+        android:layout_toStartOf="@+id/etEndMinute"
         android:hint="End hour"
-        android:inputType="number"/>
+        android:textSize="10sp"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/etEndMinute"
-        android:layout_width="107dp"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/cbTuesday"
-        android:layout_marginEnd="2dp"
+        android:layout_marginEnd="19dp"
         android:hint="End minute"
-        android:inputType="number"/>
+        android:textSize="10sp"
+        android:inputType="number" />
 
     <CheckBox
         android:id="@+id/cbMonday"
