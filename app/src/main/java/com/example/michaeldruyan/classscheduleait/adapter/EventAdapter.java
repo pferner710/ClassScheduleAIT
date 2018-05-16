@@ -37,9 +37,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tvName = (TextView) itemView.findViewById(R.id.tvName);
-            tvStartTime = (TextView) itemView.findViewById(R.id.tvStartTime);
-            tvEndTime = (TextView) itemView.findViewById(R.id.tvName);
+            tvName = (TextView) itemView.findViewById(R.id.tvEventName);
+            tvStartTime = (TextView) itemView.findViewById(R.id.tvEventStartTime);
+            tvEndTime = (TextView) itemView.findViewById(R.id.tvEventEndTime);
 
         }
     }
@@ -56,7 +56,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.row_event, viewGroup, false);
+                .inflate(R.layout.event_row_item, viewGroup, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
     }

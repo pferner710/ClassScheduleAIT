@@ -4,9 +4,15 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
+import com.example.michaeldruyan.classscheduleait.adapter.EventAdapter;
+import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
+import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
 import com.example.michaeldruyan.classscheduleait.data.Event;
 
 import java.util.List;
@@ -14,13 +20,13 @@ import java.util.List;
 public class DayActivity extends AppCompatActivity {
 
     private List<Event> eventList;
+    private Toolbar toolbar;
+    private EventAdapter eventAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +37,45 @@ public class DayActivity extends AppCompatActivity {
             }
         });
 
+        toolbar = findViewById(R.id.toolbar_day);
+        initToolbar();
+
+        RecyclerView recyclerViewList = findViewById(R.id.recyclerViewDayList);
+        recyclerViewList.setLayoutManager(new LinearLayoutManager(this));
+
+        initEvents(recyclerViewList);
+
     }
+
+    private void initToolbar(){
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Schedule");
+    }
+
+    private void initEvents(final RecyclerView recyclerView) {
+        new Thread(){
+            @Override
+            public void run() {
+                final List<Event> places =
+                        AppDatabase.getAppDatabase(DayActivity.this).eventDao().getAll();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        eventAdapter = new EventAdapter(places, DayActivity.this);
+                        recyclerView.setAdapter(eventAdapter);
+
+//                        PlacesListTouchHelperCallback touchHelperCallback = new PlacesListTouchHelperCallback(
+//                                placesAdapter);
+//                        ItemTouchHelper touchHelper = new ItemTouchHelper(
+//                                touchHelperCallback);
+//                        touchHelper.attachToRecyclerView(recyclerView);
+                    }
+                });
+            }
+        }.start();
+    }
+
+
 
 }
