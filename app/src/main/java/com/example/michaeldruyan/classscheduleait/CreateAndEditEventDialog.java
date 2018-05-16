@@ -1,7 +1,6 @@
 package com.example.michaeldruyan.classscheduleait;
 
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.support.v4.app.DialogFragment;
 import android.widget.EditText;
 
 import com.example.michaeldruyan.classscheduleait.data.Event;
@@ -18,11 +18,7 @@ import com.example.michaeldruyan.classscheduleait.data.Event;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Patrick on 5/16/18.
- */
-
-public class CreateAndEditEventDialog extends DialogFragment{
+public class CreateAndEditEventDialog extends android.app.DialogFragment {
 
     public interface EventHandler {
         public void onNewEventCreated(Event event);
