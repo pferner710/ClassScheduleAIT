@@ -7,11 +7,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.michaeldruyan.classscheduleait.adapter.EventAdapter;
 import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
 import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
 import com.example.michaeldruyan.classscheduleait.data.Event;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements CreateAndEditEventDialog.EventHandler{
 
@@ -76,9 +79,58 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
         new Thread() {
             @Override
             public void run() {
-                long id = AppDatabase.getAppDatabase(MainActivity.this).
-                        eventDao().insertEvent(event);
-                event.setEventId(id);
+
+                String day = event.day;
+                final List<Event> events =
+                        AppDatabase.getAppDatabase(MainActivity.this).eventDao().getDayEvents(day);
+
+
+                boolean createEvent = true;
+                for (Event eventInList : events) {
+                    if(event.startHour < eventInList.endHour){
+                        if(event.endHour >= eventInList.startHour){
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(MainActivity.this, "This causes a schedule conflict.", Toast.LENGTH_LONG).show();
+                                }
+                            });
+                            createEvent = false;
+                        }
+                    } else if (event.startHour == eventInList.endHour) {
+                        if(event.startMinute < eventInList.endMinute) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(MainActivity.this, "This causes a schedule conflict.", Toast.LENGTH_LONG).show();
+                                }
+                            });                         createEvent = false;
+                        }
+                    }
+
+                    if(event.startHour > event.endHour){
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, "Start time cannot be after end time.", Toast.LENGTH_LONG).show();
+                            }
+                        });                        createEvent = false;
+                    } else if(event.startHour == event.endHour && event.startMinute > event.endMinute){
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, "Start time cannot be after end time.", Toast.LENGTH_LONG).show();
+                            }
+                        });                        createEvent = false;
+                    }
+                }
+
+                if(createEvent){
+                    long id = AppDatabase.getAppDatabase(MainActivity.this).
+                            eventDao().insertEvent(event);
+                    event.setEventId(id);
+                }
+
             }
         }.start();
     }

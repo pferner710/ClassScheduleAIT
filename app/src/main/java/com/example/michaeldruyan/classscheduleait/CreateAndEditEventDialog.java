@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.support.v4.app.DialogFragment;
 import android.widget.EditText;
 
+import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
 import com.example.michaeldruyan.classscheduleait.data.Event;
 
 import java.util.ArrayList;
@@ -124,6 +125,10 @@ public class CreateAndEditEventDialog extends DialogFragment {
                             dayList.add("Sunday");
                         }
 
+                        if(!dayList.isEmpty()){
+
+                        }
+
                         for (String day : dayList) {
 
                             if (getArguments() != null &&
@@ -138,7 +143,7 @@ public class CreateAndEditEventDialog extends DialogFragment {
                                 eventToEdit.setEndMinute(Integer.parseInt(etEndMinute.getText().toString()));
 
                             } else {
-                                System.out.println("LOOP");
+
                                 Event event = new Event(
                                         etName.getText().toString(),
                                         Integer.parseInt(etStartHour.getText().toString()),
