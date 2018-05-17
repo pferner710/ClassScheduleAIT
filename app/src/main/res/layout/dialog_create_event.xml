@@ -17,7 +17,8 @@
         android:layout_toStartOf="@+id/etStartMinute"
         android:hint="Start hour"
         android:textSize="10sp"
-        android:inputType="number" />
+        android:inputType="number"
+        />
 
     <EditText
         android:id="@+id/etStartMinute"

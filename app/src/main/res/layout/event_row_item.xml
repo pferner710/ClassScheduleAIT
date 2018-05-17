@@ -12,6 +12,8 @@
         android:layout_height="wrap_content"
         android:hint="Event Name"
         android:textSize="20sp"
+
+        android:gravity="center"
         android:id="@+id/tvEventName"
         />
 
@@ -26,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="Event Start Time"
+            android:gravity="right"
             />
 
         <TextView

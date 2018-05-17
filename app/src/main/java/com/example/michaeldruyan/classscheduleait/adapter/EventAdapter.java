@@ -69,10 +69,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         viewHolder.tvName.setText(eventList.get(position).getName());
 
-        viewHolder.tvStartTime.setText(Integer.toString(eventList.get(position).getStartHour()) +
+        viewHolder.tvStartTime.setText(Integer.toString(eventList.get(position).getStartHour()) + ":"+
                 Integer.toString(eventList.get(position).getStartMinute()));
 
-        viewHolder.tvEndTime.setText(Integer.toString(eventList.get(position).getEndHour()) +
+        viewHolder.tvEndTime.setText(Integer.toString(eventList.get(position).getEndHour()) + ":"+
                 Integer.toString(eventList.get(position).getEndMinute()));
 
 //        viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
