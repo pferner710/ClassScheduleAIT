@@ -4,21 +4,21 @@
     android:layout_height="wrap_content"
     android:background="#0598a6"
     android:layout_margin="5dp"
+    android:gravity="center"
     >
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:hint="Event Name"
         android:textSize="20sp"
         android:id="@+id/tvEventName"
         />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <TextView
