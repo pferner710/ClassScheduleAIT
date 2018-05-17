@@ -14,6 +14,7 @@ import com.example.michaeldruyan.classscheduleait.adapter.EventAdapter;
 import com.example.michaeldruyan.classscheduleait.adapter.SectionAdapter;
 import com.example.michaeldruyan.classscheduleait.data.AppDatabase;
 import com.example.michaeldruyan.classscheduleait.data.Event;
+import com.example.michaeldruyan.classscheduleait.touch.EventsListTouchHelperCallback;
 
 import java.util.List;
 
@@ -73,11 +74,11 @@ public class DayActivity extends AppCompatActivity {
                         eventAdapter = new EventAdapter(events, DayActivity.this);
                         recyclerView.setAdapter(eventAdapter);
 
-//                        PlacesListTouchHelperCallback touchHelperCallback = new PlacesListTouchHelperCallback(
-//                                placesAdapter);
-//                        ItemTouchHelper touchHelper = new ItemTouchHelper(
-//                                touchHelperCallback);
-//                        touchHelper.attachToRecyclerView(recyclerView);
+                        EventsListTouchHelperCallback touchHelperCallback = new EventsListTouchHelperCallback(
+                                eventAdapter);
+                        ItemTouchHelper touchHelper = new ItemTouchHelper(
+                                touchHelperCallback);
+                        touchHelper.attachToRecyclerView(recyclerView);
                     }
                 });
             }
