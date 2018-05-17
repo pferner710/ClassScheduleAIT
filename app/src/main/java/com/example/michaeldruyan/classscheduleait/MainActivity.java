@@ -79,7 +79,6 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                 long id = AppDatabase.getAppDatabase(MainActivity.this).
                         eventDao().insertEvent(event);
                 event.setEventId(id);
-                eventAdapter.addEvent(event);
             }
         }.start();
     }
@@ -90,7 +89,6 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
             @Override
             public void run() {
                 AppDatabase.getAppDatabase(MainActivity.this).eventDao().update(event);
-                eventAdapter.updateEvent(event);
             }
         }.start();
     }

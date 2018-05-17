@@ -50,6 +50,10 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder>{
 
     public EventAdapter(List<Event> eventList, Context context) {
         this.eventList = eventList;
+
+        System.out.println("SIZE ADAPTER");
+        System.out.println(eventList.size());
+
         this.context = context;
     }
 

@@ -104,17 +104,23 @@ public class CreateAndEditEventDialog extends DialogFragment {
                         List<String> dayList = new ArrayList<String>();
                         if (cbMonday.isChecked()) {
                             dayList.add("Monday");
-                        } else if (cbTuesday.isChecked()) {
+                        }
+                        if (cbTuesday.isChecked()) {
                             dayList.add("Tuesday");
-                        } else if (cbWednesday.isChecked()) {
+                        }
+                        if (cbWednesday.isChecked()) {
                             dayList.add("Wednesday");
-                        } else if (cbThursday.isChecked()) {
+                        }
+                        if (cbThursday.isChecked()) {
                             dayList.add("Thursday");
-                        } else if (cbFriday.isChecked()) {
+                        }
+                        if (cbFriday.isChecked()) {
                             dayList.add("Friday");
-                        } else if (cbSaturday.isChecked()) {
+                        }
+                        if (cbSaturday.isChecked()) {
                             dayList.add("Saturday");
-                        } else if (cbSunday.isChecked()) {
+                        }
+                        if (cbSunday.isChecked()) {
                             dayList.add("Sunday");
                         }
 
@@ -132,12 +138,13 @@ public class CreateAndEditEventDialog extends DialogFragment {
                                 eventToEdit.setEndMinute(Integer.parseInt(etEndMinute.getText().toString()));
 
                             } else {
+                                System.out.println("LOOP");
                                 Event event = new Event(
                                         etName.getText().toString(),
                                         Integer.parseInt(etStartHour.getText().toString()),
-                                        Integer.parseInt(etStartHour.getText().toString()),
-                                        Integer.parseInt(etStartHour.getText().toString()),
-                                        Integer.parseInt(etStartHour.getText().toString()),
+                                        Integer.parseInt(etStartMinute.getText().toString()),
+                                        Integer.parseInt(etEndHour.getText().toString()),
+                                        Integer.parseInt(etEndMinute.getText().toString()),
                                         day
                                 );
                                 eventHandler.onNewEventCreated(event);
