@@ -125,6 +125,24 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                     }
                 }
 
+                if(event.startHour > 24 || event.startHour < 0 ||event.endHour > 24 || event.endHour < 0) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "Invalid time", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+                if(event.startMinute > 60 || event.startMinute < 0 ||event.endMinute > 60 || event.endMinute < 0) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "Invalid time", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+
+
                 if(createEvent){
                     long id = AppDatabase.getAppDatabase(MainActivity.this).
                             eventDao().insertEvent(event);
