@@ -2,12 +2,14 @@ package com.example.michaeldruyan.classscheduleait.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.michaeldruyan.classscheduleait.R;
 import com.example.michaeldruyan.classscheduleait.WeekActivity;
@@ -58,13 +60,13 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
         viewHolder.tvDescription.setText(descriptions[position]);
         viewHolder.tvTitle.setText(titles[position]);
 
+        //need to edit
         if(titles[position].equalsIgnoreCase("Timetable")){
             viewHolder.imageView.setImageResource(R.drawable.timetable);
-        }else if(titles[position].equalsIgnoreCase("Subjects")){
+        }else if(titles[position].equalsIgnoreCase("Help")){
             viewHolder.imageView.setImageResource(R.drawable.book);
-        }else if(titles[position].equalsIgnoreCase("Faculty")){
-            viewHolder.imageView.setImageResource(R.drawable.contact);
-        }else{
+        }
+        else{
             viewHolder.imageView.setImageResource(R.drawable.settings);
         }
 
@@ -74,6 +76,14 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
                 if (titles[position].equalsIgnoreCase("Timetable")) {
                     Intent timeTableLaunch = new Intent(context, WeekActivity.class);
                     (context).startActivity(timeTableLaunch);
+                }
+                else if(titles[position].equalsIgnoreCase("Help")){
+                    Toast.makeText(context,
+                            "Press 'Add Event' to create new event or Timetable to check schedule",
+                            Toast.LENGTH_SHORT).show();
+                }
+                else if(titles[position].equalsIgnoreCase("About")){
+                    Toast.makeText(context, "Scheduler App created by Patrick and Akeem", Toast.LENGTH_SHORT).show();
                 }
             }
 
