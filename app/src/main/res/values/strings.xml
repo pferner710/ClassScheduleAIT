@@ -3,16 +3,14 @@
 
     <string-array name="Main">
         <item>Timetable</item>
-        <item>Subjects</item>
-        <item>Faculty</item>
-        <item>Resources</item>
+        <item>About</item>
+        <item>Help</item>
     </string-array>
 
     <string-array name="Description">
-        <item> Description One</item>
-        <item> Description Two</item>
-        <item> Description Three</item>
-        <item> Description Four</item>
+        <item> Look at your Schedule!</item>
+        <item> About our app</item>
+        <item> How to use</item>
     </string-array>
 
     <string-array name="DaysOfWeek">
