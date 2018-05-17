@@ -48,16 +48,21 @@ public class DayActivity extends AppCompatActivity {
     }
 
     private void initToolbar(){
+        String day = getIntent().getStringExtra("DAY");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Schedule");
+        getSupportActionBar().setTitle(day);
     }
 
     private void initEvents(final RecyclerView recyclerView) {
+
+
+
         new Thread(){
             @Override
             public void run() {
+                String day = getIntent().getStringExtra("DAY");
                 final List<Event> events =
-                        AppDatabase.getAppDatabase(DayActivity.this).eventDao().getAll();
+                        AppDatabase.getAppDatabase(DayActivity.this).eventDao().getDayEvents(day);
 
                 System.out.println("SIZE");
                 System.out.println(events.size());
