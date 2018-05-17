@@ -61,7 +61,7 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
         viewHolder.tvTitle.setText(titles[position]);
 
         //need to edit
-        if(titles[position].equalsIgnoreCase("Timetable")){
+        if(titles[position].equalsIgnoreCase(context.getString(R.string.timetable))){
             viewHolder.imageView.setImageResource(R.drawable.timetable);
         }else if(titles[position].equalsIgnoreCase("Help")){
             viewHolder.imageView.setImageResource(R.drawable.book);
@@ -79,11 +79,11 @@ public class SectionAdapter extends RecyclerView.Adapter<SectionAdapter.ViewHold
                 }
                 else if(titles[position].equalsIgnoreCase("Help")){
                     Toast.makeText(context,
-                            "Press 'Add Event' to create new event or Timetable to check schedule",
+                            R.string.help_toast,
                             Toast.LENGTH_SHORT).show();
                 }
                 else if(titles[position].equalsIgnoreCase("About")){
-                    Toast.makeText(context, "Scheduler App created by Patrick and Akeem", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, R.string.about_toast, Toast.LENGTH_SHORT).show();
                 }
             }
 

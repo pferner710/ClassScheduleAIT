@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
     }
 
     private void showCreateEventDialog(){
-        new CreateAndEditEventDialog().show(getSupportFragmentManager(), "CreateAndEditEventDialog");
+        new CreateAndEditEventDialog().show(getSupportFragmentManager(), getString(R.string.createandeditdialog));
     }
 
     @Override
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(MainActivity.this, "This causes a schedule conflict.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.causes_schedule_conflict, Toast.LENGTH_LONG).show();
                                 }
                             });
                             createEvent = false;
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                             runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
-                                    Toast.makeText(MainActivity.this, "This causes a schedule conflict.", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(MainActivity.this, R.string.causes_schedule_conflict, Toast.LENGTH_LONG).show();
                                 }
                             });                         createEvent = false;
                         }
@@ -112,14 +112,14 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(MainActivity.this, "Start time cannot be after end time.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, R.string.start_time_after_end_time, Toast.LENGTH_LONG).show();
                             }
                         });                        createEvent = false;
                     } else if(event.startHour == event.endHour && event.startMinute > event.endMinute){
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(MainActivity.this, "Start time cannot be after end time.", Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, R.string.start_time_after_end_time, Toast.LENGTH_LONG).show();
                             }
                         });                        createEvent = false;
                     }
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(MainActivity.this, "Invalid time", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, R.string.invalid_time, Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements CreateAndEditEven
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(MainActivity.this, "Invalid time", Toast.LENGTH_LONG).show();
+                            Toast.makeText(MainActivity.this, R.string.invalid_time, Toast.LENGTH_LONG).show();
                         }
                     });
                 }

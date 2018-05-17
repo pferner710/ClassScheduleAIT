@@ -50,7 +50,7 @@ public class CreateAndEditEventDialog extends DialogFragment {
             eventHandler = (EventHandler)context;
         } else {
             throw new RuntimeException(
-                    "Wrong Interface");
+                    getString(R.string.wrong_interface));
         }
     }
 
@@ -58,7 +58,7 @@ public class CreateAndEditEventDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("New Event");
+        builder.setTitle(R.string.new_event);
 
         View rootView = getActivity().getLayoutInflater().inflate(R.layout.dialog_create_event, null);
 
@@ -77,7 +77,7 @@ public class CreateAndEditEventDialog extends DialogFragment {
 
         builder.setView(rootView);
 
-        builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
@@ -104,25 +104,25 @@ public class CreateAndEditEventDialog extends DialogFragment {
 
                         List<String> dayList = new ArrayList<String>();
                         if (cbMonday.isChecked()) {
-                            dayList.add("Monday");
+                            dayList.add(getString(R.string.monday));
                         }
                         if (cbTuesday.isChecked()) {
-                            dayList.add("Tuesday");
+                            dayList.add(getString(R.string.tuesday));
                         }
                         if (cbWednesday.isChecked()) {
-                            dayList.add("Wednesday");
+                            dayList.add(getString(R.string.wednesday));
                         }
                         if (cbThursday.isChecked()) {
-                            dayList.add("Thursday");
+                            dayList.add(getString(R.string.thursday));
                         }
                         if (cbFriday.isChecked()) {
-                            dayList.add("Friday");
+                            dayList.add(getString(R.string.friday));
                         }
                         if (cbSaturday.isChecked()) {
-                            dayList.add("Saturday");
+                            dayList.add(getString(R.string.saturday));
                         }
                         if (cbSunday.isChecked()) {
-                            dayList.add("Sunday");
+                            dayList.add(getString(R.string.sunday));
                         }
 
                         if(!dayList.isEmpty()){
@@ -159,7 +159,7 @@ public class CreateAndEditEventDialog extends DialogFragment {
                         d.dismiss();
 
                     } else {
-                        etName.setError("Cannot be empty");
+                        etName.setError(getString(R.string.cannot_be_empty));
                     }
                 }
             });

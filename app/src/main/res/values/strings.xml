@@ -23,5 +23,30 @@
         <item>Sunday</item>
     </string-array>
     <string name="title_activity_day">DayActivity</string>
+    <string name="createandeditdialog">CreateAndEditEventDialog</string>
+    <string name="causes_schedule_conflict">This causes a schedule conflict.</string>
+
+    <string name="start_time_after_end_time">Start time cannot be after end time.</string>
+
+    <string name="invalid_time">Invalid time</string>
+    <string name="week">Week</string>
+    <string name="day">DAY</string>
+    <string name="size">SIZE</string>
+    <string name="save">Save</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="cannot_be_empty">Cannot be empty</string>
+    <string name="wrong_interface">Wrong Interface</string>
+    <string name="new_event">New Event</string>
+    <string name="timetable">Timetable</string>
+    <string name="help_toast">Press \'Add Event\' to create new event or Timetable to check schedule</string>
+    <string name="about_toast">Scheduler App created by Patrick and Akeem</string>
+    <string name="size_event_adapter">SIZE EVENT ADAPTER</string>
+
 
 </resources>

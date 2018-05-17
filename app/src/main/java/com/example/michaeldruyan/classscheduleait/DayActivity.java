@@ -61,11 +61,11 @@ public class DayActivity extends AppCompatActivity {
         new Thread(){
             @Override
             public void run() {
-                String day = getIntent().getStringExtra("DAY");
+                String day = getIntent().getStringExtra(getString(R.string.day));
                 final List<Event> events =
                         AppDatabase.getAppDatabase(DayActivity.this).eventDao().getDayEvents(day);
 
-                System.out.println("SIZE");
+                System.out.println(getString(R.string.size));
                 System.out.println(events.size());
 
                 runOnUiThread(new Runnable() {

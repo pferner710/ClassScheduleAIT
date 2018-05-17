@@ -22,7 +22,7 @@ public class WeekActivity extends AppCompatActivity {
 
         //initialize toolbar
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Week");
+        getSupportActionBar().setTitle(R.string.week);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
